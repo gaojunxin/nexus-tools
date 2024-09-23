@@ -30,6 +30,8 @@ def main():
         userpass = args.userpass
         masked_password = '*' * len(userpass)
         print(f'准备上传：{path}，仓库地址：{repo}，用户名：{username}，密码：{masked_password}')
+        nexus_tools = NexusTools(repo, username, userpass)
+        nexus_tools.upload_jar(path)
     elif args.command == 'npm-down':
         path = args.path
         store_path = args.store_path

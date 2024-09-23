@@ -97,7 +97,7 @@ class NexusTools:
         return response.text
     
     def put_file(self, file_path, home_path):
-        upload_url = file_path.replace(home_path+'/','').replace('\\','/')
+        upload_url = file_path.replace(home_path+os.sep,'').replace('\\','/')
         print('正在上传' + file_path)
         try:
             url = self.repo_url+'/'+ upload_url
